@@ -10,6 +10,7 @@ RUN conda config --add channels cantera \
         numpy \
         matplotlib \
         gmaps \
+        pandas \
         && conda clean -tipsy
 
 COPY ./docker-entrypoint.sh /srv/docker-entrypoint.sh
