@@ -4,7 +4,7 @@ MAINTAINER Bryan Weber <bryan.weber@uconn.edu>
 
 USER root
 
-RUN conda config --add channels cantera \
+RUN conda config --add channels cantera/label/dev \
     && conda install -yq \
         cantera \
         numpy \
