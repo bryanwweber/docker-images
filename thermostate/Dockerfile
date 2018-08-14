@@ -16,10 +16,12 @@ RUN conda config --add channels bryanwweber \
         python=3.6.5 \
         && conda clean -tipsy
 
+ENV NOTEBOOK_DIR=/home/$NB_USER/work
+
+ENTRYPOINT ["tini", "-g", "--", "/srv/docker-entrypoint.sh"]
+CMD ["start-singleuser.sh"]
 
 COPY docker-entrypoint.sh /srv/docker-entrypoint.sh
 COPY Tutorials.tar.gz /tmp/Tutorials.tar.gz
-ENTRYPOINT ["tini", "--", "/srv/docker-entrypoint.sh"]
-CMD ["start-singleuser.sh"]
 
 USER $NB_USER
