@@ -1,6 +1,6 @@
 FROM jupyter/minimal-notebook:latest
 
-MAINTAINER Bryan Weber <bryan.weber@uconn.edu>
+LABEL maintainer="Bryan Weber <bryan.weber@uconn.edu>"
 
 USER root
 
