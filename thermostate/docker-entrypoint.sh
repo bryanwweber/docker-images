@@ -6,9 +6,8 @@
 set -e
 
 echo $NOTEBOOK_DIR
-echo $USER
+echo $NB_USER
 
-# If the run command is the default, do some initialization first
 if [ ! -d "$NOTEBOOK_DIR/Tutorials" ]; then
     mkdir -p $NOTEBOOK_DIR/Tutorials
     tar -xzf /tmp/Tutorials.tar.gz -C $NOTEBOOK_DIR/Tutorials
