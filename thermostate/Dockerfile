@@ -6,11 +6,14 @@ USER root
 
 RUN conda config --add channels bryanwweber \
     && conda install -yq \
+    && conda config --add channels conda-forge \
         thermostate \
         numpy \
         matplotlib \
+        blas=*=openblas \
         convert_and_download \
         thermohw \
+        python=3.6.5 \
         && conda clean -tipsy
 
 
