@@ -5,8 +5,8 @@ LABEL maintainer="Bryan Weber <bryan.weber@uconn.edu>"
 USER root
 
 RUN conda config --add channels bryanwweber \
-    && conda install -yq \
     && conda config --add channels conda-forge \
+    && conda install -yq \
         thermostate \
         numpy \
         matplotlib \
