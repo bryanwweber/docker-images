@@ -7,16 +7,16 @@ USER root
 RUN conda config --add channels bryanwweber \
     && conda config --add channels conda-forge \
     && conda install -yq \
-        thermostate \
+        thermostate=0.5.1 \
+        convert_and_download=0.2.3 \
+        thermohw=0.4.2 \
+        python=3.7 \
         numpy \
         matplotlib \
         blas=*=openblas \
-        convert_and_download \
-        thermohw \
-        python=3.6.5 \
         && conda clean -tipsy
 
-ENV NOTEBOOK_DIR=/home/$NB_USER/work
+ENV NOTEBOOK_DIR=/home/$NB_USER
 
 ENTRYPOINT ["tini", "-g", "--", "/srv/docker-entrypoint.sh"]
 CMD ["start-singleuser.sh"]
