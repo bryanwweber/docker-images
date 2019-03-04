@@ -14,20 +14,23 @@ USER $NB_UID
 # Install Python 3 packages
 # Remove pyqt and qt pulled in for matplotlib since we're only ever going to
 # use notebook-friendly backends in these images
+RUN conda config --remove channels defaults
 RUN conda config --system --prepend channels bryanwweber
+RUN conda update --quiet --yes conda
+RUN conda clean --all --yes
 RUN conda update --all --quiet --yes
 RUN conda install --quiet --yes \
     'conda-forge::blas=*=openblas' \
     'ipywidgets=7.4*' \
     'matplotlib=3.0*' \
     'seaborn=0.9*' \
-    'thermostate=0.5.1' \
+    'thermostate=0.5.3' \
     'convert_and_download=0.2.4' \
     'thermohw=0.4.2' \
     'numpy' \
     'python=3.7*' && \
     conda remove --quiet --yes --force qt pyqt && \
-    conda clean -tipy && \
+    conda clean --all --yes && \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     # Also activate ipywidgets extension for JupyterLab
