@@ -5,13 +5,13 @@
 
 set -e
 
-echo $NOTEBOOK_DIR
-echo $NB_USER
+# echo $NOTEBOOK_DIR
+# echo $NB_USER
 
-if [ ! -d "$NOTEBOOK_DIR/Tutorials" ]; then
-    mkdir -p $NOTEBOOK_DIR/Tutorials
-    tar -xzf /tmp/Tutorials.tar.gz -C $NOTEBOOK_DIR/Tutorials
-fi
+# if [ ! -d "$NOTEBOOK_DIR/Tutorials" ]; then
+#     mkdir -p $NOTEBOOK_DIR/Tutorials
+#     tar -xzf /tmp/Tutorials.tar.gz -C $NOTEBOOK_DIR/Tutorials
+# fi
 
 # Run the command provided
 exec "$@"
