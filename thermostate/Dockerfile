@@ -19,7 +19,7 @@ RUN conda update --all --quiet --yes
 RUN conda install --quiet --yes \
     'thermostate=1.2.0' \
     'convert_and_download=0.3.0' \
-    'thermohw=0.4.2' && \
+    'thermohw=0.6.0' && \
     conda clean --all --yes && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
